@@ -70,19 +70,19 @@ def restore_entities(translated_text, entity_map):
     return pattern.sub(rep_func, translated_text)
 
 def selective_translate(text, source_lang="en", target_lang="hi"):
-    # Step 1: Extract entities that should not be translated.
+    # Extract entities that should not be translated.
     entities = extract_entities(text)
     print("Extracted Entities:", entities)
     
-    # Step 2: Mask the entities in the text with unique placeholders.
+    # Mask the entities in the text with unique placeholders.
     masked_text, entity_map = mask_entities(text, entities)
     print("Masked Text:", masked_text)
     
-    # Step 3: Translate the masked text.
+    # Translate the masked text.
     translated_masked_text = GoogleTranslator(source=source_lang, target=target_lang).translate(masked_text)
     print("Translated Masked Text:", translated_masked_text)
     
-    # Step 4: Restore the original entities.
+    # Restore the original entities.
     final_translation = restore_entities(translated_masked_text, entity_map)
     return final_translation
 
