@@ -2,7 +2,7 @@
 
 ## Overview
 
-### This project implements a Selective Translation system that translates text while preserving certain entities (e.g., names, locations, dates). The system ensures that important terms remain unchanged during translation.
+This project implements a Selective Translation system that translates text while preserving certain entities (e.g., names, locations, dates). The system ensures that important terms remain unchanged during translation.
 
 ## How It Works
 
